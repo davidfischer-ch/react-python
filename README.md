@@ -46,12 +46,23 @@ transformer = jsx.JSXTransformer()
 js = transformer.transform_string(jsx)
 ```
 
-**Django**: PyReact includes a JSX compiler for [django-pipeline](https://github.com/cyberdelia/django-pipeline). It has been tested with django-pipeline 1.3.20, but may work with other versions too. Add it to your project's pipeline settings like this:
+**Django**: PyReact includes JSX compilers for [django-pipeline](https://github.com/cyberdelia/django-pipeline) and [django-compressor](https://github.com/django-compressor/django-compressor/).
+
+**django-pipeline**: It has been tested with django-pipeline 1.3.20, but may work with other versions too. Add it to your project's pipeline settings like this:
 
 ```python
 PIPELINE_COMPILERS = (
   'react.utils.pipeline.JSXCompiler',
 )
+```
+
+**django-compressor**: Compiler was tested with `django-compressor` 1.5. Add this to your Django settings to enable it:
+
+```python
+COMPRESS_PRECOMPILERS = (
+    ('text/jsx', 'react.utils.compressor.JSXCompiler'),
+)
+
 ```
 
 
