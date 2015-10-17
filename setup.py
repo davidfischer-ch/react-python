@@ -20,6 +20,7 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Software Development :: Code Generators',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
@@ -34,5 +35,6 @@ setup(
     ]},
     install_requires=[
         'PyExecJS >= 1.0.5',
-    ]
+    ],
+    use_2to3=True
 )
